@@ -53,18 +53,6 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
         ivLogo.startAnimation(animationTranslateUp);
         Glide.with(this).load("http://i.giphy.com/oenruB2DKC7p6.gif")
                 .crossFade()
-                .listener(new RequestListener<String, GlideDrawable>() {
-                    @Override
-                    public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
-                        return false;
-                    }
-
-                    @Override
-                    public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
-
-                        return false;
-                    }
-                })
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(ivLogo);
     }
